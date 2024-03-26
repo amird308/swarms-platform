@@ -1,13 +1,23 @@
 import { cn } from "@/shared/utils/cn";
+import { ReactNode } from "react";
 
+
+interface IBentoGridProps {
+  className: string;
+  children: ReactNode;
+}
+
+interface IBentoGridItemProps {
+  className?: string;
+  title?: string | React.ReactNode;
+  description?: string | React.ReactNode;
+  header?: React.ReactNode;
+  icon?: React.ReactNode;
+}
 
 const BentoGrid = ({
-  className,
-  children,
-}: {
-  className?: string;
-  children?: React.ReactNode;
-}) => {
+  className, children
+}: IBentoGridProps) => {
   return (
     <div
       className={cn(
@@ -26,13 +36,7 @@ export const BentoGridItem = ({
   description,
   header,
   icon,
-}: {
-  className?: string;
-  title?: string | React.ReactNode;
-  description?: string | React.ReactNode;
-  header?: React.ReactNode;
-  icon?: React.ReactNode;
-}) => {
+}: IBentoGridItemProps) => {
   return (
     <div
       className={cn(
